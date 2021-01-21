@@ -36,26 +36,31 @@ curl -sSL https://install.pi-hole.net | bash
 
 # Download PADD if wanted
 if [ "$PADD" = "TRUE" ]
+then
 	wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh
 	chmod +x padd.sh
 fi
 
 # Install scheduled reboot to crontab if wanted
 if [ "$REBOOTSCHEDULED" = "TRUE" ]
+then
 	(sudo crontab -l ; echo "0 $REBOOTTIME * * * /sbin/shutdown -r now")| sudo crontab -
 fi
 
 # Set temperature to fahrenheit instead of celsius if wanted
 if [ "$TEMPF" = "TRUE" ]
+then
 	echo "TEMPERATUREUNIT=F" | sudo tee -a /etc/pihole/setupVars.conf
 fi
 
 # Set system to boot to terminal and autologin if wanted
 if [ "$BOOTTERMINAL" = "TRUE" ]
+then
 	raspi-config nonint do_boot_behaviour B2
 fi
 
 # Add commands to the .bashrc file to create a pihole backup, do updates, and start PADD if wanted
 if [ "$BASHRC" = "TRUE" ]
+then
 	cat /home/pi/BASHAPPEND | sudo tee -a /home/pi/.bashrc
 fi
