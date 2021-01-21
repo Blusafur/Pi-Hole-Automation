@@ -1,14 +1,13 @@
 #!/bin/bash
 
-### Prerequisites for install
+# Prerequisites for install
 # 1. Verify static IP addressing on interface you want to use
 # 2. Verify internet connectivity on raspberry pi
-# 3. Change default password for "pi" user
+# 3. Change default password for pi user
 # Optional - LCD screen is working if using one
 # Optional - Enable SSH access
 
-
-### Variables for script, set to TRUE or FALSE
+# Variables for script, set to TRUE or FALSE
 # Check for updates/upgrades for packages/OS before starting install
 UPDATE=TRUE
 # Enable reboot and specify time by the hour (24 hour)
@@ -22,7 +21,6 @@ PADD=TRUE
 BOOTTERMINAL=TRUE
 # Add commands to the .bashrc file to create a pihole backup, do updates, and start PADD (this file runs automatically when a terminal opens)
 BASHRC=TRUE
-
 
 # Start in Pi's home directory
 cd /home/pi
