@@ -62,5 +62,5 @@ fi
 # Add commands to the .bashrc file to create a pihole backup, do updates, and start PADD if wanted
 if [ "$BASHRC" = "TRUE" ]
 then
-	cat /home/pi/BASHAPPEND | sudo tee -a /home/pi/.bashrc
+	cat /home/pi/Pi-Hole-Automation/BASHAPPEND | sudo tee -a /home/pi/.bashrc
 fi
