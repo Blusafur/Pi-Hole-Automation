@@ -21,7 +21,7 @@ PADD=TRUE
 BOOTTERMINAL=TRUE
 # Add commands to the .bashrc file to create a pihole backup, do updates, and start PADD (this file runs automatically when a terminal opens)
 BASHRC=TRUE
-# Use premade blocklists from firebog.net
+# Use premade blocklists from firebog.net and REGEX
 BLOCKLISTS=TRUE
 
 # Start in Pi's home directory
@@ -67,12 +67,13 @@ then
 	cat /home/pi/Pi-Hole-Automation/BASHAPPEND | sudo tee -a /home/pi/.bashrc
 fi
 
-# User premade blocklists if wanted (using script from https://github.com/Zelo72)
+# Use premade blocklists if wanted (from https://github.com/Zelo72 and https://github.com/mmotti/pihole-regex)
 if [ "$BLOCKLISTS" = "TRUE" ]
 then
 	sudo wget -N https://raw.githubusercontent.com/Zelo72/rpi/master/pihole/migratePiholeAdlists.py
   sudo wget -O /etc/pihole/adlists.list https://v.firebog.net/hosts/lists.php?type=tick
   sudo python3 migratePiholeAdlists.py
+  curl -sSl https://raw.githubusercontent.com/mmotti/pihole-regex/master/install.py | sudo python3
 fi
 
 # Reboot the raspberry pi
