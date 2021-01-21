@@ -64,3 +64,6 @@ if [ "$BASHRC" = "TRUE" ]
 then
 	cat /home/pi/Pi-Hole-Automation/BASHAPPEND | sudo tee -a /home/pi/.bashrc
 fi
+
+# Reboot the raspberry pi
+sudo reboot now
