@@ -4,8 +4,8 @@
 # 1. Verify static IP addressing on interface you want to use
 # 2. Verify internet connectivity on raspberry pi
 # 3. Change default password for "pi" user
-# (Optional) LCD screen is working if using one
-# (Optional) Enable SSH access
+# Optional - LCD screen is working if using one
+# Optional - Enable SSH access
 
 
 ### Variables for script, set to TRUE or FALSE
