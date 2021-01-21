@@ -13,7 +13,7 @@ pihole -g
 
 # Update PADD
 cd ~
-wget -N https://raw.githubusercontent.com/jpmck/PADD/master/padd.sh
+sudo wget -N https://raw.githubusercontent.com/jpmck/PADD/master/padd.sh
 
 # Start PADD pihole status screen
 ./padd.sh
