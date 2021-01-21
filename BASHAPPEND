@@ -1,0 +1,19 @@
+
+# Create pihole backup
+pihole -a -t
+
+# Update the system
+sudo apt-get update -y && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y
+
+# Check for pihole updates
+pihole -up
+
+# Update pihole lists (Gravity)
+pihole -g
+
+# Update PADD
+cd ~
+wget -N https://raw.githubusercontent.com/jpmck/PADD/master/padd.sh
+
+# Start PADD pihole status screen
+./padd.sh
