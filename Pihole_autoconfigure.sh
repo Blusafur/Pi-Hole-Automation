@@ -27,6 +27,7 @@ cd /home/pi
 
 # Check for updates/upgrades for packages/OS before starting install if wanted
 if [ "$UPDATE" = "TRUE" ]
+then
 	apt-get update -y && sudo apt-get dist-upgrade -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y
 fi
 
