@@ -4,6 +4,7 @@
 # 1. Verify static IP addressing on interface you want to use
 # 2. Verify internet connectivity on raspberry pi
 # 3. Change default password for pi user
+# 4. Set correct timezone (sudo dpkg-reconfigure tzdata)
 # Optional - LCD screen is working if using one
 # Optional - Enable SSH access
 
